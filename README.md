@@ -25,7 +25,7 @@ Stretch Goals:
 
  > NOTE: The quickest and easiest way to reliably import a file in Python is to just copy and paste the file you want to import into the same directory as the file that wants to import. This obviously isn't considered best practice, but it is the most reliable way to do it across all platforms.  If the import isn't working, feel free to try this method.
 
-### Queues
+### [ ] Queues
  * Should have the methods: `enqueue`, `dequeue`, and `len`.
    * `enqueue` should add an item to the back of the queue.
    * `dequeue` should remove and return an item from the front of the queue.
@@ -33,7 +33,7 @@ Stretch Goals:
  
 ![Image of Queue](https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/600px-Data_Queue.svg.png)
 
-### Doubly Linked Lists
+### [x] Doubly Linked Lists
  * The `ListNode` class, which represents a single node in the doubly-linked list, has already been implemented for you. Inspect this code and try to understand what it is doing to the best of your ability.
  * The `DoublyLinkedList` class itself should have the methods: `add_to_head`, `add_to_tail`, `remove_from_head`, `remove_from_tail`, `move_to_front`, `move_to_end`, `delete`, and `get_max`.
    * `add_to_head` replaces the head of the list with a new value that is passed in.
@@ -48,7 +48,7 @@ Stretch Goals:
  
 ![Image of Doubly Linked List](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png)
 
-### Binary Search Trees
+### [ ] Binary Search Trees
 * Should have the methods `insert`, `contains`, `get_max`.
   * `insert` adds the input value to the binary search tree, adhering to the rules of the ordering of elements in a binary search tree.
   * `contains` searches the binary search tree for the input value, returning a boolean indicating whether the value exists in the tree or not.
@@ -57,7 +57,7 @@ Stretch Goals:
 
 ![Image of Binary Search Tree](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png)
 
-### Heaps
+### [ ] Heaps
 * Should have the methods `insert`, `delete`, `get_max`, `_bubble_up`, and `_sift_down`.
   * `insert` adds the input value into the heap; this method should ensure that the inserted value is in the correct spot in the heap
   * `delete` removes and returns the 'topmost' value from the heap; this method needs to ensure that the heap property is maintained after the topmost element has been removed. 
@@ -70,7 +70,7 @@ Stretch Goals:
 
 ![Image of a Heap in Array form](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Heap-as-array.svg/603px-Heap-as-array.svg.png)
 
-### LRU Cache
+### [ ] LRU Cache
 An LRU (Least Recently Used) cache is an in-memory storage structure that adheres to the [Least Recently Used](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) caching strategy. 
 
 In essence, you can think of an LRU cache as a data structure that keeps track of the order in which elements (which take the form of key-value pairs) it holds are added and updated. The cache also has a max number of entries it can hold. This is important because once the cache is holding the max number of entries, if a new entry is to be inserted, another pre-existing entry needs to be evicted from the cache. Because the cache is using a least-recently used strategy, the oldest entry (the one that was added/updated the longest time ago) is removed to make space for the new entry. 
