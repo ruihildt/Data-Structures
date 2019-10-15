@@ -25,7 +25,7 @@ Stretch Goals:
 
  > NOTE: The quickest and easiest way to reliably import a file in Python is to just copy and paste the file you want to import into the same directory as the file that wants to import. This obviously isn't considered best practice, but it is the most reliable way to do it across all platforms.  If the import isn't working, feel free to try this method.
 
-### [ ] Queues
+### [x] Queues
  * Should have the methods: `enqueue`, `dequeue`, and `len`.
    * `enqueue` should add an item to the back of the queue.
    * `dequeue` should remove and return an item from the front of the queue.
