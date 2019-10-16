@@ -12,9 +12,9 @@ class LRUCache:
     """
     def __init__(self, limit=10):
         self.limit = limit
-        self.nodes_counter = 0
-        self.storage = DoublyLinkedList()
-        self.nodes_list = {}
+        self.size = 0
+        self.order = DoublyLinkedList()
+        self.storage = dict()
 
     """
     Retrieves the value associated with the given key. Also
@@ -24,7 +24,18 @@ class LRUCache:
     key-value pair doesn't exist in the cache.
     """
     def get(self, key):
-        pass
+        # if the key exists in the storage
+        if key in self.storage:
+            # set the node to the item at the key in storage
+            node = self.storage[key]
+            # move the node to end of order
+            self.order.move_to_end(node)
+            # return the nodes value
+            return node.value[1]
+        # otherwise
+        else:
+            # return None
+            return None
 
     """
     Adds the given key-value pair to the cache. The newly-
@@ -37,4 +48,27 @@ class LRUCache:
     the newly-specified value.
     """
     def set(self, key, value):
-        pass
+        # if key exists in storage
+        if key in self.storage:
+            # set the node to the storage at the key
+            node = self.storage[key]
+            # set the nodes value to the key value pair
+            node.value = (key, value)
+            # move the node to the end and 
+            self.order.move_to_end(node)
+            # return to caller
+            return
+        # if the size is reaching the limit
+        if self.size == self.limit:
+            # delete the item at the head of the storage order
+            del self.storage[self.order.head.value[0]]
+            # remove node from head of the order
+            self.order.remove_from_head()
+            # decrement the size
+            self.size -= 1
+        # add the key value pair to the orders tail
+        self.order.add_to_tail((key, value))
+        # set the storage at key to the orders tail
+        self.storage[key] = self.order.tail
+        # increment size
+        self.size += 1
