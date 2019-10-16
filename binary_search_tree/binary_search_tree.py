@@ -14,42 +14,53 @@ class BinarySearchTree:
         self.right = None
 
     # Insert the given value into the tree
-    def insert(self, new_value):
+    def insert(self, value_to_insert):
         # LEFT CASE
         # check if the new nodes value is less than our current ones value
-        if new_value < self.value:
+        if value_to_insert < self.value:
             # if the is no left child,
             if self.left == None:
                 # place a new node here
-                self.left = BinarySearchTree(new_value)
+                self.left = BinarySearchTree(value_to_insert)
                 return
             # otherwise
             else:
                 # repeat process for left
-                self.left.insert(new_value)
+                self.left.insert(value_to_insert)
 
         # RIGHT CASE
         # check if the new nodes value is greater than or equal to the current parent value
-        if new_value >= self.value:
+        if value_to_insert >= self.value:
             # if there is no right child here
             if self.right == None:
                 # place a new one
-                self.right = BinarySearchTree(new_value)
+                self.right = BinarySearchTree(value_to_insert)
                 return
             # otherwise
             else:
                 # repeat process right
-                self.right.insert(new_value)
+                self.right.insert(value_to_insert)
 
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
-        # BASE CASE
+        # Check if root node value is equal to target
+        if self.value == target:
+            # Return True
+            return True
 
-        # LEFT CASE
+        # Check if target is smaller than node value
+        if target < self.value and self.left:
+            # Search recursively
+            return self.left.contains(target)
 
-        # RIGHT CASE
-        pass
+        # Check if target is bigger or equal to node value
+        if target > self.value and self.right:
+            # Search recursively
+            return self.right.contains(target)
+
+        # Return False when no value has been found
+        return False
 
     # Return the maximum value found in the tree
     def get_max(self):
