@@ -116,11 +116,11 @@ class BinarySearchTree:
         # use a queue data structure
         q = Queue()
         # enqueue the starting node on to the queue
-        q.enqueue(self)
+        q.enqueue(node)
         # loop while the queue has data
-        while len(q):
+        while q.len():
             # dequeue the current item off the queue
-            current_node = q.dequeue(self)
+            current_node = q.dequeue()
             # print the current value
             print(current_node)
             # if the current node has a left child
@@ -138,9 +138,9 @@ class BinarySearchTree:
         # use a stack data structure
         s = Stack()
         # push the starting node on to the stack
-        s.push(self)
+        s.push(node)
         # loop while the stack has data
-        while len(s):
+        while s.len():
             # pop the current item off the stack
             current_node = s.pop()
             # print the current value
