@@ -66,12 +66,17 @@ class BinarySearchTree:
     def get_max(self):
         # BASE CASE 
         # if empty tree
+        if not self:
             # return none
+            return None
         
         # RECURSIVE
         # if the the is no right value
+        if not self.right:
             # return the root value
+            return self.value
         # return the get max of the the right node
+        return self.right.get_max()
 
         # ITTERATIVE
         # set a max value variable to keep track of max value
