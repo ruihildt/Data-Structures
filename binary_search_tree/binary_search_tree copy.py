@@ -87,6 +87,7 @@ class BinarySearchTree:
             # move on to the next right node in the tree
             # setting the current node to the current nodes right
         # return our max value
+        pass
 
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
@@ -101,7 +102,7 @@ class BinarySearchTree:
 
         # right case
         if self.right:
-            self.right.for_each(cb)
+            self.left.for_each(cb)
 
     # DAY 2 Project -----------------------
 
@@ -116,21 +117,14 @@ class BinarySearchTree:
         # use a queue data structure
         q = Queue()
         # enqueue the starting node on to the queue
-        q.enqueue(self)
         # loop while the queue has data
-        while len(q):
-            # dequeue the current item off the queue
-            current_node = q.dequeue(self)
+            # dequeue the current it em off the queue
             # print the current value
-            print(current_node)
             # if the current node has a left child
-            if current_node.left:
                 # enqueue the left child on to the queue
-                q.enqueue(current_node.left)
             # if the current node has a right child
-            if current_node.right:
-                # enqueue right child on to the queue
-                q.enqueue(current_node.right)          
+                # enqueue right child on to the queue          
+        pass
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
@@ -138,21 +132,14 @@ class BinarySearchTree:
         # use a stack data structure
         s = Stack()
         # push the starting node on to the stack
-        s.push(self)
         # loop while the stack has data
-        while len(s):
-            # pop the current item off the stack
-            current_node = s.pop()
+            # pop the current it em off the stack
             # print the current value
-            print(current_node.value)
             # if the current node has a left child
-            if current_node.left:
                 # push the left child on to the stack
-                s.push(current_node.left)
             # if the current node has a right child
-            if current_node.right:
-                # push right child on to the stack   
-                s.push(current_node.right)       
+                # push right child on to the stack          
+        pass
 
     # STRETCH Goals -------------------------
     # Note: Research may be required

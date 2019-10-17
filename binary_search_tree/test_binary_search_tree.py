@@ -48,6 +48,7 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.bst.insert(v4)
         self.bst.insert(v5)
 
+        
         self.bst.for_each(cb)
 
         self.assertTrue(5 in arr)
@@ -57,7 +58,7 @@ class BinarySearchTreeTests(unittest.TestCase):
         self.assertTrue(v4 in arr)
         self.assertTrue(v5 in arr)
 
-def test_print_traversals(self):
+    def test_print_traversals(self):
         # WARNING:  Tests are for Print()
         # Debug calls to Print() in functions will cause failure
 
